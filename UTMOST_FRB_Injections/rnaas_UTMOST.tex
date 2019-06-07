@@ -1,0 +1,71 @@
+\documentclass[RNAAS]{aastex62}
+
+\begin{document}
+
+\title{Fast Radio Burst Injection Tests}
+
+\correspondingauthor{E. F. Keane}
+
+\author[0000-0002-4553-655X]{E. F. Keane}
+\affiliation{SKA Organization, Jodrell Bank Observatory, Macclesfield, Cheshire SK11 9FT, UK}
+\email{e.keane@skatelescope.org}
+
+\author[0000-0002-1943-1324]{C. R. H. Walker}
+\affiliation{Jodrell Bank Center for Astrophysics, University of Manchester, M13 9PL, UK}
+\affiliation{SKA Organization, Jodrell Bank Observatory, Macclesfield, Cheshire SK11 9FT, UK}
+%\author[0000-0003-1301-966X]{D. R. Lorimer}
+%\affiliation{West Virginia University, Department of Physics and Astronomy, P. O. Box 6315, Morgantown, WV, USA}
+%\affiliation{Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown, WV, USA}
+
+%\author[0000-0002-2578-0360]{F. Crawford}
+%\affiliation{Department of Physics and Astronomy, Franklin and Marshall College, PO Box 3003, Lancaster, PA 17604, USA}
+
+\keywords{surveys --- methods: data analysis}
+
+\section{FRB injection tests}
+
+Recently \citet{Wael2019} present discoveries of fast radio bursts (FRBs) made at the UTMOST telescope in Australia. Their system is based on one of the most commonly used FRB search pipelines: \textsc{heimdall}\footnote{See for example \citealt{bbf10} and \texttt{https://sourceforge.net/projects/heimdall-astro/}}. They describe injection of synthetic FRB signals directly into the telescope data stream and report that approximately 10 percent of $\sim2000$ injected FRBs are missed, including many examples with signal-to-noise ratio (S/N) above 40. Possible explanations for this might include: (i) issues with the \textsc{heimdall}-based pipeline; (ii) the local radio frequency interference (RFI) environment; (iii) the stability of the telescope system; and (iv) the classification system; these are investigated below.
+
+\section{Noise, pipeline or environment?}
+
+As well as discovering a large fraction of all known FRBs, \textsc{heimdall} has been shown, at least by the limited testing it has undergone, to be an accurate algorithm \citep{kp15}. The S/N it reports for a given input signal of known shape, width and DM is as expected for the best matches to these features, when the noise is reasonably well-behaved, i.e. Gaussian and with no strong residual RFI. This criterion is not met by some other commonly used algorithms, which has resulted in detectable FRBs remaining undetected for some time \citep{Crawford2016,Zhang2019,Keane2019}; there are likely more such FRBs in public domain datasets. Testing the efficiency of FRB search pipelines in general has recently become a topic of widening effort in the field, reflecting the welcome wider trend to make research results generally more reproducible. In FRB science the drive comes from a need to understand instruments, pipelines, and telescope environment effects so as to be able to infer useful physical quantities such as sky-rates, sensitivity thresholds, survey completeness, and the time variation of all of these.
+
+Figure 1(a) shows the distribution of UTMOST FRB test events as a function of their injected S/N (priv. comm. V. Gupta). The criteria for an event to be considered detected is the same as that used in \citet{Wael2019} and so the only difference from the left-most panel of their Figure 4 is the histogram binning used; here bin widths are 1-sigma in injected S/N. The over-arching picture one gets is that a large number of injected FRBs, with high S/N, are missed by the system. However a large number of these are "false injections" (priv. comm. V. Gupta). These are FRB injections that were scheduled to occur, but were in fact not searched for as observing did not occur as planned at those scheduled times (for a variety of reasons). As such these have not been `missed' as no pipeline ever searched for them. Figure 1(b) shows the injected sample (i.e. showing only those injections that were searched for, in green) and the subset of those that were missed using the \citet{Wael2019} criteria (in orange). Furthermore the missed distribution with one of the selection criteria removed is also shown (in yellow). The criterion in question was one that rejected detections with best estimated dispersion measure (DM) values that are offset from the injected values by a factor 1/4 of the estimated value. Such a cut can remove long-duration low-DM events~\citep{cm03}; this is the case for the very brightest injected event; it is detected by \textsc{heimdall} at high S/N in an RFI-free data snippet but is filtered out using this rule\footnote{We note that some of the events excluded due to the DM-related cut are in fact truly missed, but due to the presence of RFI.}.
+
+At the detection threshold, by definition, one misses exactly half of the injected pulses due to the noise distribution. Below the threshold one misses more than half, and above the threshold one misses less than half, in a manner described by the noise statistics, search pipeline efficiencies and the RFI environment. As the UTMOST system injects Gaussian pulses\footnote{See \texttt{https://github.com/vg2691994/Furby}}, but \textsc{heimdall} searches for top-hat pulses, the maximum recoverable S/N is thus a factor of $(\pi/(8\ln 2))^{1/4} \approx 0.87$ of the injected S/N \citep{mc03}. The maximum recoverable S/N is also shown on the upper abscissa in Figure 4. The 9-sigma threshold used is thus \textit{effectively} a $10.4$-sigma threshold in \textit{injected} S/N owing to the filter shape mis-match. Taking this into consideration the theoretical expectation for the missed fraction is over-plotted (in blue) in Fig 1(b). The number of injected events per bin is too low to fully establish the noise distribution, but with this caveat in mind it seems that the first few bins agree with the theoretical expectation. The expectation is also that no pulses should be missed for injected S/N$\gtrsim 13$. Missed detections for injected S/N$\lesssim 12$ are credibly explained as a combination of the mis-match in pulse shape used in the injection and search, and the noise fluctuations in the data. With these considerations only $\sim 1$\% of injections remain missed without credible explanation, before one examines the data or the search pipeline specifics.
+
+\begin{figure}%[h!]
+\begin{center}
+\includegraphics[scale=0.32,angle=0]{Keane_fig1a.pdf}
+\includegraphics[scale=0.32,angle=0]{Keane_fig1b.pdf}
+\caption{The left panel is a reproduction of Fig 4(a) from \citet{Wael2019}, re-binned to 1-sigma injected S/N bin widths. The right-hand panel shows the sample were actually injected (green), injected and searched (orange), and injected and searched with one selection cut, as discussed in the main text, removed (yellow). The theoretical expectation for the numbers missed, on average, is overplotted (blue). The latter highlights that missed events with injected S/N$\gtrsim 13$ require further scrutiny of the noise and RFI environments, and of particular corners of the search configuration space; doing this all missed injections are explainable.\label{fig:1}}
+\end{center}
+\end{figure}
+
+\section{The brightest injections}
+
+The remaining sample of missed injections, with the highest injected S/N values, are however of the most concern; there are 10 missed FRBs with injected S/N of $14$ or greater that are missed. They may be due to issues with the search pipeline or the RFI/noise environment at the time of the injections. The former would be correctable, whereas the latter may not be. Fortunately a 2.95-second snippet of data, containing the true sky noise at the time of each event, has been retained (priv. comm. V. Gupta) and with this one can assess the noise environment. Examining the missed events with injected S/N$\geq 14$ by eye shows that all but two cases can be explained by the presence of strong RFI in the $840-845$~MHz range. Of the two remaining signals: (i) the first missed event has injected $S/N=15$ and a pulse width of $\sim 2.5$ time samples implying a maximum recoverable top-hat S/N of $\sim(15)*(0.87)*(2/2.5)^{-0.5}\approx 11.7$ if the trial DM is exactly correct. From visual inspection no RFI is evident and the pulse can \textit{just} be discerned, by eye, but is credibly in a `trough' of the noise distribution; (ii) the second has injected S/N$=25$ and is quite obvious to the eye in an apparently RFI-free snippet of data. The reason for its non-detection is thus unclear at first, and the only concerning non-detection in the sample. However, the data snippet containing this event has some distinguishing properties which may hint as to why it was missed. It is the only incomplete data file in the entire sample of events injected into the telescope data stream. The duration of the data snippet is $<2.2$~s, in contradiction of its own data header. Its DM value is $3025.7\;\mathrm{pc}\,\mathrm{cm}^{-3}$ and the low-frequency end of the pulse is seen to be `chopped off' due to the very large dispersion sweep across the band, and the reduced length of the file. In combination these facts may point at a reason why this injected event was missed. 
+
+\section{Concerns Allayed?}
+
+In summary, it does not appear that $\sim10\%$ of the $\sim 2000$ simulated FRB signals recently injected into the UTMOST data stream were missed. Over and above those that are consistent with noise fluctuations, mis-labelling, overly harsh data cuts and the presence of RFI, only 1 event was seen to be potentially suspicious. After communicating the above to the UTMOST team, further investigation determined that \textsc{heimdall} had not actually been employed to search for this $3025.7\;\mathrm{pc}\,\mathrm{cm}^{-3}$ event (V. Gupta, priv. comm.). The pipeline is configured to read the data stream in `gulps' of time, and when the very last such gulp is incomplete it is discarded without being searched. This exact scenario happened for this event. 
+%While there is a mild DM-related selection effect associated with this rule, it is coincidence that this has happened for the high DM event, as the processed gulp sizes are much longer than the dispersion sweep of the largest D 
+Comfortingly then, the detection, or not, of all injected FRB signals in the UTMOST data are explained.
+
+
+\acknowledgements
+
+EFK would like to thank and commend Vivek Gupta and Wael Farah for sharing their data, injection search results, helpful and instructive explanations and discussions. EFK suggests that ``Big Dog''-like blind injections\footnote{See for example: \texttt{https://www.ligo.org/news/blind-injection.php}} into real data streams be developed as a standard procedure, in FRB searches.
+
+\begin{samepage}
+\bibliographystyle{aasjournal}
+\bibliography{rnaas_UTMOST}
+\end{samepage}
+
+%% BIBLIOGRAPHY %%
+%\bibliographystyle{unsrtnat}
+%\bibliography{rnaas_frb010312}
+
+\end{document}
+
+

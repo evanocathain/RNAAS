@@ -1,0 +1,40 @@
+\begin{thebibliography}{}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\href{#1}{#1}}
+
+%\bibitem[{{Bhandari} {et~al.}(2018)}]{SUPERB2}
+%{Bhandari} {et~al.}, 2018, \mnras, 475, 1427.
+
+%\bibitem[{{Champion} {et~al.}(2016)}]{Champion2016}
+%{Champion} {et~al.}, 2015, \mnras, 460, L30.
+
+\bibitem[{{Barsdell} {et~al.}(2010)}]{bbf10}
+{Barsdell} {et~al.}, 2010, \mnras, 408, 1936.
+
+\bibitem[{{Cordes} \& {McLaughlin}(2003)}]{cm03}
+{Cordes} \& {McLaughlin}, 2003, \apj, 596, 1142.
+
+\bibitem[{{Crawford} {et~al.}(2016)}]{Crawford2016}
+{Crawford} {et~al.}, 2016, \mnras, 460, 3370.
+
+\bibitem[{{Farah} {et~al.}(2019)}]{Wael2019}
+{Farah} {et~al.}, 2019, \mnras, submitted, astro-ph/1905.02293.
+
+\bibitem[{{Keane} \& {Petroff}(2015)}]{kp15}
+{Keane} \& {Petroff}, 2015, \mnras, 447, 2852.
+
+\bibitem[{{Keane}(2019)}]{Keane2019}
+{Keane}, 2019, RNAAS, 3, 41.
+
+\bibitem[{{McLaughlin} \& {Cordes}(2003)}]{mc03}
+{McLaughlin} \& {Cordes}, 2003, \apj, 596, 982.
+%\bibitem[{{Knispel} {et~al.}(2013)}]{einstein}
+%{Knispel} {et~al.}, 2013, \apj, 774, 93.
+
+%\bibitem[{{Lorimer} {et~al.}(2007)}]{Lorimer2007}
+%{Lorimer} {et~al.}, 2007, Science, 318, 777.
+
+\bibitem[{{Zhang} {et~al.}(2019)}]{Zhang2019}
+{Zhang} {et~al.}, 2019, \mnras, 484, L147.
+
+\end{thebibliography}
